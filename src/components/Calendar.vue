@@ -128,7 +128,8 @@ export default {
     checkYear () {
       if (this.$refs.yearSelect !== document.activeElement) {
         this.$nextTick(() => {
-          this.year_text = this.monthDate.getFullYear()
+          if (this.$refs.startCalendar) this.year_text = this.start.getFullYear()
+          if (this.$refs.endCalendar) this.year_text = this.end.getFullYear()
         })
       }
     }
